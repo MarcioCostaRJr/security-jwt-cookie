@@ -6,16 +6,20 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.7</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>br.com.examplejwt</groupId>
-	<artifactId>security</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Security JWT</name>
-	<description>Security JWT</description>
+	<artifactId>cookie</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>Security JWT - Token</name>
+	<description>Security JWT - Token</description>
+
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
+		<jjwt.version>0.9.1</jjwt.version>
+		<lombok.version>1.18.22</lombok.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +41,7 @@
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
-			<version>0.9.1</version>
+			<version>${jjwt.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -47,9 +51,9 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 			<optional>true</optional>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,15 +66,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>central</id>
-			<name>Maven Central</name>
-			<layout>default</layout>
-			<url>https://repo1.maven.org/maven2</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
